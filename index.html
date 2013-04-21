@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <script src="angular.min.js"></script>
+    <script src="volunteer.js"></script>
+  </head>
+  <body>
+    <h2>Volunteers ({{volunteers.length}})</h2>
+    <div ng-controller="VolunteerCtrl">
+      <form ng-submit="addVolunteer()">
+        <input type="name" ng-model="volunteerName"  size="30"
+               placeholder="add new volunteer here">
+        <input class="btn-primary" type="submit" value="add">
+      </form>
+      <ul class="unstyled">
+        <li ng-repeat="volunteer in volunteers">
+          {{volunteer.name}}
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
